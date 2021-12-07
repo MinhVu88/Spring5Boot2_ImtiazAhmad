@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Spring 5 Tutorial</title>
+	</head>
+	<body>
+		<h1>Spring 5 Tutorial | Sec 1 - pt 10 | Imtiaz Ahmad</h1>
+		<form action="/form" method="post" th:object="${userInfo}">
+			<p>Full name: <input type="text" th:field="${userInfo.fullName}"/></p>
+			<p>Age: <input type="number" th:field="${userInfo.age}"/></p>
+			<p>Employed?: <input type="checkbox" th:field="${userInfo.employed}" th:value="true"/></p>
+			<p>
+				Marital status:
+				<input type="radio" id="married" th:field="${userInfo.maritalStatus}" th:value="married"/>
+				<label for="married">Married</label> |
+				<input type="radio" id="single" th:field="${userInfo.maritalStatus}" th:value="single"/>
+				<label for="single">Single</label> |
+				<input type="radio" id="divorced" th:field="${userInfo.maritalStatus}" th:value="divorced"/>
+				<label for="divorced">Divorced</label> |
+				<input type="radio" id="widowed" th:field="${userInfo.maritalStatus}" th:value="widowed"/>
+				<label for="widowed">Widowed</label>
+			</p>
+			<p>
+				<input type="submit" value="Submit"/> <input type="reset" value="Reset"/>
+			</p>
+		</form>
+	</body>
+</html>
